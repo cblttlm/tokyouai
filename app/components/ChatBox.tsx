@@ -61,7 +61,7 @@ export default function ChatBox() {
 
   return (
 
-    <div className="border rounded-xl p-6 bg-white shadow">
+    <div className="p-4 bg-blue-50 rounded-xl">
 
       {/* Chat messages */}
 
