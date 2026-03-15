@@ -1,4 +1,4 @@
-import InsuranceCompare from "../../components/InsuranceCompare"
+import InsuranceCompare from "../components/InsuranceCompare"
 
 export default function InsurancePage(){
 
