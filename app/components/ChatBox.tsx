@@ -82,7 +82,7 @@ export default function ChatBox() {
               className={
                 msg.role === "user"
                   ? "inline-block bg-blue-600 text-white px-4 py-2 rounded-lg"
-                  : "inline-block bg-gray-200 px-4 py-2 rounded-lg"
+                  : "inline-block bg-blue-200 text-white px-4 py-2 rounded-lg"
               }
             >
 
