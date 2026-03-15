@@ -65,7 +65,7 @@ export default function ChatBox() {
 
       {/* Chat messages */}
 
-      <div className="h-96 overflow-y-auto mb-4 space-y-4">
+        <div className="min-h-screen bg-gray-900 flex justify-center items-center p-6">
 
         {messages.map((msg, index) => (
 
