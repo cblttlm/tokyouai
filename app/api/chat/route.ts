@@ -1,11 +1,35 @@
+import OpenAI from "openai"
+
+const client = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1"
+})
+
 export async function POST(req: Request) {
 
-  const body = await req.json()
+  try {
 
-  const message = body.message
+    const body = await req.json()
 
-  return Response.json({
-    reply: "AI response: " + message
-  })
+    const completion = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        { role: "user", content: body.message }
+      ]
+    })
+
+    return Response.json({
+      reply: completion.choices[0].message.content
+    })
+
+  } catch (error) {
+
+    console.error(error)
+
+    return Response.json({
+      reply: "AI error occurred"
+    })
+
+  }
 
 }
